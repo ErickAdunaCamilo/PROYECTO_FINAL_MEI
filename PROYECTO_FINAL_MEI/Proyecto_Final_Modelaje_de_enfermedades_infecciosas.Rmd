@@ -1,0 +1,41 @@
+---
+title: "Proyecto Final de Modelaje de Enfermedades Infecciosas"
+
+author: "Erick Emiliano Aduna Camilo, Carla Valeria Alejandre SanJuan, Jesus Julian Barron Moreno"
+
+date: "9/1/2023"
+
+output: html_document
+---
+
+## "Modelo predictivo de movimientos sociales en el sistema político en México"
+
+**Planteamiento**
+
+Establecer un modelo por compartimentos que ayude a predecir el comportamiento de la sociedad dependiendo el sistema político bajo el que se rige, esto con el objetivo de entender las dinámicas sociales y la representación de la conciencia colectiva que funciona partir de individuos y sólo en una cantidad agregada genera acciones, estos representados en movimientos sociales.
+
+El modelo en principio contempla distintos compartimentos, empezando por los ciudadanos conformes= **C**, el cual refleja a aquellos individuos conformes con su situación actual en el sistema, siguiendo con el compartimendo de ciudadanos inconformes **I**, que representa a aquellos ciudadanos afectados por una situación relacionada al problema que se modele, y que pudieran resolver su situación. Luego tenemos al compartimeno de ciudadanos Oprimidos **O**(El nombre y caracteristicas del compartimento aun las estamos debatiendo), el cual refleja la transición de aquellos ciudadanos inconformes y que ademas exigen solución, pero que son reprimidos o ignorados por las autoridades. En respuesta al compartimento **O**, los individuos pueden volverse ciudadanos rebeldes o en estado de manifestación, que se englobarían en el compartimento **R**, de este tipo se piensa en dos categorias de Rebeldes, aquellos que se manifiestan y aportan a un cambio social, apoyando lo que se conoce como **conciencia colectiva** que es el seguimiento de un movimiento social en beneficio de la mayoría, o bien convertirse en ciudadanos rebeldes anarquistas, que no apoyan como tal el movimiento y tienen implicaciones negativas en el grupo opuesto de rebeldes. Se planea ademas incluir un compartimento de ciudadanos apaticos **A**, los cuales son concientes de los problemas sociales que aquejan a su comunidad, pero deciden no actuar al respecto en ningún tipo de instancia y un grupo de contra revolucionarios o contra rebeldes, **Cr**, que represente población que no esta a favor de la lucha social, este grupo se benificiaría del compartimento **C** de ciudadanos conformes cuya situación comoda no propicia que busquen un cambio y a su vez afectarían negativamente .
+
+Si bien la aproximación del modelo es que sea uno generalizado a diversas inconformidades sociales, nuestro enfoques se basa en dos situaciones actuales en el país, las cuales son los **movimientos feministas** y la **opresión de la libertad de expresión peridistica**, reflejado en los multiples asesinatos a profesionales de este ambito. Veremos si nos enfocamos solo en uno(para fines practicos, sería lo más conveniente), o podemos abarcar ambos eventos.
+
+**Ecuaciones**
+
+$\frac{dC}{dt} = \nu - b*C - A1*C - A2*cR*C$
+
+$\frac{dI}{dt} = -\nu + b*C - A3*A -A4*I + A11*An*Ra$
+
+$\frac{dO}{dt} = -\nu + A4*I + A5*A - A6*O$
+
+$\frac{dA}{dt} = -\nu + A1*C + A3*I + A6*O -A5*O -A7*A -A8*An + A11*Ra*An$
+
+$\frac{dcR}{dt} = -\nu + A2*cR*C -A9*cR$
+
+$\frac{dRa}{dt} = -\nu + A10*O - A11*An*Ra + A7*A$
+
+$\frac{dAn}{dt} = -\nu + A8*A$
+
+![](IMAGENES/Esquema%20de%20compartimentos.jpg)
+
+**Contribución**
+
+Todos los integrantes contribuyeron de manera equitativa, proponiendo ideas, buscando datos estadísticos, con planeación de parametros y de idea general de proyecto.
